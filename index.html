@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adansi Akrofuom Development Initiative Foundation (AADIF)</title>
+    <meta name="description" content="Official website for AADIF, a foundation dedicated to transformative development in Adansi Akrofuom through agribusiness, infrastructure, youth employment, and community empowerment.">
+    <meta name="keywords" content="AADIF, Adansi Akrofuom, Ghana, foundation, community development, agribusiness, affordable housing, youth employment, sustainable projects">
+    
+    <link rel="icon" href="adansi.jpg" type="image/jpeg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        'aadif-green': '#00483D',
+                        'aadif-gold': '#FFD700',
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Merriweather', serif; }
+        .hero-slide {
+            background-size: cover; background-position: center;
+            transition: opacity 1.5s ease-in-out, transform 8s linear;
+            transform: scale(1.1);
+            position: absolute; inset: 0; opacity: 0;
+        }
+        .hero-slide.active { opacity: 1; transform: scale(1); }
+        .testimonial-slider { animation: scroll 80s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .testimonial-slider:hover { animation-play-state: paused; }
+        .sticky-header {
+            position: sticky; top: 0; z-index: 50; transition: all 0.3s ease-in-out;
+        }
+        .header-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+        .dark .header-scrolled {
+            background-color: rgba(22, 27, 34, 0.85);
+            border-bottom: 1px solid #30363d;
+        }
+        .whatsapp-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        
+        /* Dark Mode styles */
+        .dark body { background-color: #0d1117; color: #c9d1d9; }
+        .dark .bg-white { background-color: #161b22; }
+        .dark .bg-gray-50 { background-color: #0d1117; }
+        .dark .bg-gray-100 { background-color: #11161d; }
+        .dark .text-gray-800 { color: #c9d1d9; }
+        .dark .text-gray-600 { color: #8b949e; }
+        .dark .text-aadif-green { color: #58a6ff; }
+        .dark .shadow-md, .dark .shadow-lg, .dark .shadow-xl { box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+        .dark .border-gray-200 { border-color: #30363d; }
+        .dark .border-gray-300 { border-color: #30363d; }
+        .dark input, .dark textarea { background-color: #0d1117; color: #c9d1d9; border-color: #30363d;}
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <header id="header" class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky-header">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-3">
+                <img src="adansi.jpg" alt="AADIF Logo" class="h-12 w-12 rounded-full object-cover">
+                <div>
+                    <h1 class="text-lg font-bold text-aadif-green font-serif">AADIF</h1>
+                    <p class="text-xs text-gray-600 hidden md:block">The World at Your Service</p>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center text-sm font-medium">
+                <a href="#home" class="text-gray-600 hover:text-aadif-green transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-aadif-green transition">About</a>
+                <a href="#impact" class="text-gray-600 hover:text-aadif-green transition">Impact</a>
+                <a href="#projects" class="text-gray-600 hover:text-aadif-green transition">Projects</a>
+                <a href="#agribusiness" class="text-gray-600 hover:text-aadif-green transition">Agribusiness</a>
+                <a href="#volunteer" class="text-gray-600 hover:text-aadif-green transition">Volunteer</a>
+                <a href="#contact" class="text-gray-600 hover:text-aadif-green transition">Contact</a>
+                <a href="#donate" class="bg-aadif-gold text-aadif-green font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition shadow-sm">Donate</a>
+                <button id="dark-mode-toggle" class="p-2 rounded-full text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <i data-lucide="sun" id="sun-icon" class="w-5 h-5"></i>
+                    <i data-lucide="moon" id="moon-icon" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 py-4"></div>
+    </header>
+
+    <main>
+        <section id="home" class="relative h-[90vh] text-white overflow-hidden">
+            <div id="hero-carousel" class="absolute inset-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4" data-aos="fade-in" data-aos-duration="1500">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight" style="font-family: 'Merriweather', serif;">Building Communities, Empowering Futures.</h1>
+                <p class="mt-6 max-w-2xl text-lg text-gray-200">The Adansi Akrofuom Development Initiative Foundation is dedicated to creating sustainable growth and lasting opportunities for our communities.</p>
+                <div class="mt-10">
+                    <a href="#donate" class="bg-aadif-gold text-aadif-green font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition shadow-lg transform hover:scale-105">Donate Now</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-aadif-green" data-aos="fade-up">Our Core Objectives</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Our comprehensive approach to community development encompasses seven core areas that address the fundamental needs of our communities.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="core-objectives-container">
+                    </div>
+            </div>
+        </section>
+        
+        <section id="impact" class="py-20 bg-aadif-green text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold" data-aos="fade-up">Our Vision for 2035: A Story in Numbers</h2>
+                <p class="mt-4 text-lg text-gray-200 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">By 2035, Adansi Akrofuom will be a model of community-driven development. Our goals are ambitious because our community's potential is limitless.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-5xl font-bold text-aadif-gold counter" data-target="2000" data-suffix="+">0</p>
+                        <p class="mt-2 text-gray-300">Affordable Housing Units</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <p class="text-5xl font-bold text-aadif-gold counter" data-target="10000" data-suffix="+">0</p>
+                        <p class="mt-2 text-gray-300">Sustainable Jobs Created</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <p class="text-5xl font-bold text-aadif-gold counter" data-target="50000" data-suffix="+">0</p>
+                        <p class="mt-2 text-gray-300">Lives Directly Impacted</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agribusiness" class="py-20 bg-gray-50">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-aadif-green" data-aos="fade-up">Pillar of Growth: Agribusiness</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Transforming Adansi Akrofuom into a leading agribusiness hub through mechanization, processing facilities, and integrated value chains that maximize productivity and exports.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800/50 p-4 rounded-lg shadow-lg" data-aos="fade-up">
+                    <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="agribusiness-tabs"></div>
+                    <div id="agribusiness-content" class="overflow-hidden"></div>
+                </div>
+
+                <div class="mt-16" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-center text-aadif-green mb-12">Implementation Roadmap</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center" id="agribusiness-roadmap-container">
+                        </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-aadif-green" data-aos="fade-up">Community Infrastructure Projects</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Building the foundations for a secure and prosperous future through strategic, high-impact investments.</p>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden mb-20" data-aos="zoom-in-up">
+                    <img src="housing.jpg" alt="Housing and Hotel Project" class="w-full h-64 object-cover">
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-3xl font-bold text-aadif-green">Flagship Project: Affordable Housing, Hotel & Casino</h3>
+                        <p class="mt-4 text-gray-600">A cornerstone of our 10-year plan, this integrated project will provide 2,000 affordable housing units alongside a 200-room hotel and casino. This investment creates jobs, boosts tourism, and generates sustainable revenue to fund future community programs, all equipped with state-of-the-art security and technology.</p>
+                        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center" id="hotel-impact-container">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-12" data-aos="fade-up">
+                   <h3 class="text-3xl font-bold text-aadif-green">Community Transport Initiative</h3>
+                   <p class="mt-2 text-gray-600 max-w-3xl mx-auto">Our transport initiative addresses critical mobility needs, ensuring access to education and supporting effective governance in our community.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden" data-aos="fade-right">
+                        <img src="schoolbus.jpg" alt="School Commuter Bus" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-aadif-green">School Commuter Bus</h4>
+                            <p class="mt-2 text-gray-600">Ensuring every child has safe and reliable transport to school, eliminating distance as a barrier to education and promoting consistent attendance.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden" data-aos="fade-left">
+                        <img src="traditional.jpg" alt="Traditional Council Bus" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-aadif-green">Traditional Council Bus</h4>
+                            <p class="mt-2 text-gray-600">Supporting our community leaders with dedicated transport to facilitate governance, stakeholder engagement, and cultural preservation efforts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-gray-800 p-8 md:p-12 rounded-lg shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div data-aos="fade-up">
+                            <h4 class="text-2xl font-bold text-center text-aadif-green mb-8">Community Impact & Timeline</h4>
+                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mb-8" id="transport-impact-container">
+                                </div>
+                            <div class="relative mt-4">
+                                <div id="transport-timeline-container" class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center"></div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200" class="text-center">
+                            <h4 class="text-2xl font-bold text-center text-aadif-green">Support Our Transport Initiative</h4>
+                            <p class="mt-4 text-gray-600 max-w-md mx-auto">Help us provide reliable transportation that connects our community and ensures no child is left behind.</p>
+                            <div class="mt-6 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                                <a href="#donate" class="bg-aadif-gold text-aadif-green font-bold py-3 px-6 rounded-full text-lg hover:bg-opacity-90 transition shadow-md transform hover:scale-105">Donate for Transport</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-aadif-green" data-aos="fade-up">What People Are Saying</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Real words of encouragement and impact shared by those touched by our mission.</p>
+            </div>
+            <div class="mt-16 w-full overflow-hidden relative">
+                 <div class="flex w-[200%] testimonial-slider" id="testimonial-container"></div>
+            </div>
+        </section>
+
+        <section id="donate" class="py-20 bg-white">
+             <div class="container mx-auto px-6 text-center">
+                <div class="flex justify-center items-center gap-2" data-aos="fade-up">
+                    <i data-lucide="heart" class="w-9 h-9 text-aadif-green"></i>
+                    <h2 class="text-4xl font-bold text-aadif-green">Support Our Mission</h2>
+                </div>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Your generous contribution empowers our transformative work. Every donation, big or small, makes a significant difference.</p>
+                <div class="mt-12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg border-2 border-aadif-gold relative" data-aos="fade-right">
+                        <span class="absolute top-0 right-4 -mt-4 bg-aadif-gold text-aadif-green text-sm font-bold px-3 py-1 rounded-full animate-pulse">POPULAR</span>
+                        <h3 class="text-2xl font-bold text-aadif-green">Mobile Money</h3>
+                        <p class="text-gray-600 mt-2">A quick and easy way to donate locally.</p>
+                        <button class="details-btn mt-6 bg-aadif-green text-white font-bold py-3 px-6 rounded-lg w-full hover:bg-opacity-90 transition" data-target="momo-details">Show Details</button>
+                        <div id="momo-details" class="hidden mt-4 text-left space-y-3">
+                            <p><strong>Number:</strong> <span class="copy-target">+233596257623</span></p>
+                            <p><strong>Recipient:</strong> Robert A Micah</p>
+                            <button class="copy-btn bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200 px-4 py-2 text-sm rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition w-full">Copy Number</button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold text-aadif-green">Bank Transfer</h3>
+                        <p class="text-gray-600 mt-2">For direct deposits and international donations.</p>
+                        <button class="details-btn mt-6 bg-aadif-green text-white font-bold py-3 px-6 rounded-lg w-full hover:bg-opacity-90 transition" data-target="bank-details">Show Details</button>
+                        <div id="bank-details" class="hidden mt-4 text-left space-y-3">
+                             <p><strong>Bank:</strong> Ecobank (Main Branch, Ghana)</p>
+                             <p><strong>Account:</strong> <span class="copy-target">1441000218944</span></p>
+                             <p><strong>Recipient:</strong> Robert A Micah</p>
+                             <button class="copy-btn bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200 px-4 py-2 text-sm rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition w-full">Copy Account Number</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="volunteer" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-4xl font-bold text-aadif-green">Become a Volunteer</h2>
+                        <p class="mt-4 text-lg text-gray-600">Join our dedicated team and be a part of the change. Your time, skills, and passion can help us build a brighter future for Adansi Akrofuom. Your contribution is invaluable.</p>
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070" alt="Volunteers working together" class="mt-8 rounded-lg shadow-md w-full h-auto object-cover" loading="lazy">
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-left">
+                        <form id="volunteer-form" action="https://formspree.io/f/xeorjlvp" method="POST">
+                            <div class="space-y-6">
+                                <div><label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label><input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-aadif-green focus:border-aadif-green"></div>
+                                <div><label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label><input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-aadif-green focus:border-aadif-green"></div>
+                                <div><label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message / Interests</label><textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-aadif-green focus:border-aadif-green"></textarea></div>
+                            </div>
+                            <div class="mt-8"><button type="submit" class="w-full bg-aadif-green text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition">Submit Request</button></div>
+                            <p id="form-status" class="mt-4 text-center"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold text-aadif-green">Our Leadership & Locations</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Meet our dedicated team and find out where we operate.</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up">
+                        <img src="richard.jpg" alt="Robert Micah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
+                        <h3 class="mt-6 text-2xl font-bold text-aadif-green">Robert Micah</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-600">President & CEO</p>
+                        <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                            <p><a href="tel:+233596257623" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 596 257 623</a></p>
+                            <p><a href="mailto:ramicah007@gmail.com" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>ramicah007@gmail.com</a></p>
+                        </div>
+                    </div>
+                     <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <img src="gifty.jpg" alt="Gifty Micah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
+                        <h3 class="mt-6 text-2xl font-bold text-aadif-green">Gifty Micah</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-600">Vice President</p>
+                         <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                            <p><a href="tel:+233244243615" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 244 243 615</a></p>
+                            <p><a href="mailto:gifmic@yahoo.com" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>gifmic@yahoo.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h3 class="text-3xl font-bold text-aadif-green mb-6">Where We Serve</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg flex items-center gap-2"><i data-lucide="building" class="w-5 h-5 text-aadif-green"></i>AADIF Headquarters</h4>
+                                <p class="text-gray-600 ml-7">Community 25, Golf Junction, Tema, Greater Accra Region, Ghana</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-aadif-green"></i>Primary Service Area</h4>
+                                <p class="text-gray-600 ml-7">Adansi Akrofuom & Beyond, Ghana, West Africa</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg flex items-center gap-2"><i data-lucide="contact" class="w-5 h-5 text-aadif-green"></i>Get In Touch</h4>
+                                <p class="text-gray-600 ml-7">Ready to make a difference? Contact us to learn more about our programs, volunteer opportunities, or partnership possibilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="rounded-lg overflow-hidden shadow-xl h-96">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63473.54120352934!2d-1.5583681404172403!3d6.084196112521193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdbe2538b729457%3A0x69f88c5de88e8ba0!2sAkrofuom!5e0!3m2!1sen!2sgh!4v1727989530495!5m2!1sen!2sgh" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="bg-gray-100 dark:bg-gray-800 py-4 text-center">
+        <p class="text-sm text-gray-700 dark:text-gray-300 font-semibold tracking-wide">
+            Upcoming Projects: <span class="text-aadif-green">Affordable Housing · Hotel & Casino · Transport Buses</span> — Building the Future Together.
+        </p>
+    </div>
+
+    <footer class="bg-aadif-green text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; <span id="current-year"></span> Adansi Akrofuom Development Initiative Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/233596257623?text=Hello%20AADIF,%20I'm%20interested%20in%20learning%20more%20about%20your%20initiatives." target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg whatsapp-pulse z-40" title="Chat with us on WhatsApp">
+        <i data-lucide="message-circle"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // --- All JavaScript logic is contained within this DOMContentLoaded listener ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- DATA FOR DYNAMIC CONTENT ---
+            const heroImages = [
+                'https://images.unsplash.com/photo-1594708767771-a75022e7ff35?q=80&w=2070', // Community farming
+                'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070', // Charity hands
+                'https://images.unsplash.com/photo-1542810634-71277d952098?q=80&w=2070', // Children in school
+                'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070', // Team working
+                'https://images.unsplash.com/photo-1618495034027-0b44585c9557?q=80&w=2070' // Medical aid
+            ];
+
+            const coreObjectivesData = [
+                { icon: 'briefcase', title: 'Youth Employment Creation' },
+                { icon: 'users', title: 'Women\'s Empowerment' },
+                { icon: 'utensils-crossed', title: 'Free Feeding Programs' },
+                { icon: 'home', title: 'Affordable Housing' },
+                { icon: 'graduation-cap', title: 'Educational Opportunities' },
+                { icon: 'globe', title: 'Faculty & Student Exchange' },
+                { icon: 'palmtree', title: 'Tourism & Cultural Development' }
+            ];
+
+            const agribusinessTabsData = {
+                'Crop Production': { icon: 'carrot', image: 'crop.jpg' },
+                'Livestock Farming': { icon: 'goat', image: 'livestock.jpg' },
+                'Agro-Processing': { icon: 'factory', image: 'agro.jpg' },
+                'Export & Market': { icon: 'ship', image: 'export.jpg' }
+            };
+
+            const agribusinessRoadmapData = [
+                { years: '1-4', title: 'Crop Plantations', icon: 'leaf' },
+                { years: '2-5', title: 'Agribusiness Processing Plants', icon: 'cpu' },
+                { years: '2-6', title: 'Mechanization Program', icon: 'tractor' },
+                { years: '3-7', title: 'Poultry & Livestock Farms', icon: 'egg' }
+            ];
+
+            const hotelCountersData = [
+                { icon: 'briefcase', target: 2500, suffix: '+', label: 'Jobs Created' },
+                { icon: 'users', target: 150000, suffix: '+', label: 'Visitors per Year' },
+                { icon: 'dollar-sign', target: 85, suffix: '%', label: 'Revenue Reinvested' }
+            ];
+
+            const transportImpactData = [
+                { value: '1,200+', label: 'Students Transported Daily' },
+                { value: '95%', label: 'Improved School Attendance' },
+                { value: '50+', label: 'Council Events Supported' }
+            ];
+            
+            const transportTimelineData = [
+                { phase: 'Month 1-2', title: 'Community Assessment', icon: 'clipboard-list' },
+                { phase: 'Month 3-4', title: 'Bus Procurement', icon: 'shopping-cart' },
+                { phase: 'Month 5', title: 'Driver Training', icon: 'user-check' },
+                { phase: 'Month 6+', title: 'Service Launch', icon: 'bus' }
+            ];
+
+            const testimonialsData = [
+                { quote: "AADIF's support for our local school has been transformative. The new furniture and scholarships have given our children a chance for a better future.", name: "Nana Kwasi, Community Elder" },
+                { quote: "The agribusiness training program opened my eyes to modern farming techniques. My yield has doubled, and my family is thriving.", name: "Ama Serwaa, Farmer" },
+                { quote: "As a young entrepreneur, the foundation's focus on job creation is inspiring. I'm hopeful for the economic growth AADIF will bring to our district.", name: "Kofi Mensah, Small Business Owner" },
+                { quote: "The vision for affordable housing gives us hope. Having a safe and secure home is a dream for many families here.", name: "Esi Badu, Resident" },
+                { quote: "We are excited to partner with AADIF. Their comprehensive development plan is exactly what Adansi Akrofuom needs for sustainable progress.", name: "Local Government Official" },
+                { quote: "Volunteering with AADIF has been a rewarding experience. It's amazing to see the direct impact of our efforts on the community.", name: "David, AADIF Volunteer" }
+            ];
+            
+            // --- DYNAMIC CONTENT INJECTION FUNCTIONS ---
+
+            const injectContent = (containerId, data, renderer) => {
+                const container = document.getElementById(containerId);
+                if (container) {
+                    container.innerHTML = data.map(renderer).join('');
+                }
+            };
+            
+            // Core Objectives Renderer
+            injectContent('core-objectives-container', coreObjectivesData, (item, index) => `
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center transform hover:-translate-y-2 transition-transform" data-aos="fade-up" data-aos-delay="${index * 50}">
+                    <div class="bg-aadif-gold/10 inline-block p-4 rounded-full">
+                        <i data-lucide="${item.icon}" class="w-8 h-8 text-aadif-green"></i>
+                    </div>
+                    <h3 class="mt-4 text-xl font-bold text-aadif-green">${item.title}</h3>
+                </div>`);
+
+            // Agribusiness Roadmap Renderer
+            injectContent('agribusiness-roadmap-container', agribusinessRoadmapData, (item, index) => `
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="${index * 100}">
+                    <div class="bg-aadif-gold text-aadif-green inline-block p-3 rounded-full"><i data-lucide="${item.icon}" class="w-7 h-7"></i></div>
+                    <h4 class="mt-4 text-lg font-bold text-aadif-green">${item.title}</h4>
+                    <p class="text-sm font-semibold text-gray-500">Years ${item.years}</p>
+                </div>`);
+            
+            // Hotel Impact Counters Renderer
+            injectContent('hotel-impact-container', hotelCountersData, (item, index) => `
+                <div data-aos="fade-up" data-aos-delay="${index * 100}">
+                    <div class="bg-white dark:bg-gray-700/50 inline-block p-4 rounded-full"><i data-lucide="${item.icon}" class="w-8 h-8 text-aadif-green"></i></div>
+                    <p class="mt-2 text-4xl font-bold text-aadif-green counter" data-target="${item.target}" data-suffix="${item.suffix}">0</p>
+                    <p class="text-gray-600">${item.label}</p>
+                </div>`);
+            
+            // Transport Impact Renderer
+            injectContent('transport-impact-container', transportImpactData, (item) => `
+                <div>
+                    <p class="text-3xl font-bold text-aadif-green">${item.value}</p>
+                    <p class="text-gray-600 text-sm">${item.label}</p>
+                </div>`);
+            
+            // Transport Timeline Renderer
+            injectContent('transport-timeline-container', transportTimelineData, (item, index) => `
+                <div data-aos="fade-up" data-aos-delay="${index * 100}">
+                    <div class="bg-aadif-green/80 dark:bg-gray-700 text-white inline-block p-3 rounded-full"><i data-lucide="${item.icon}" class="w-6 h-6"></i></div>
+                    <p class="mt-2 font-bold text-aadif-green">${item.title}</p>
+                    <p class="text-sm text-gray-500">${item.phase}</p>
+                </div>`);
+                
+            // Testimonials Renderer
+            const allTestimonials = [...testimonialsData, ...testimonialsData]; // Duplicate for seamless loop
+            injectContent('testimonial-container', allTestimonials, (item) => `
+                <div class="w-[50%] md:w-[25%] lg:w-[16.66%] flex-shrink-0 px-4">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md h-full">
+                        <p class="text-gray-600 italic">"${item.quote}"</p>
+                        <p class="mt-4 font-bold text-aadif-green text-right">- ${item.name}</p>
+                    </div>
+                </div>`);
+            // --- Agribusiness Tabs Logic ---
+        const agribusinessTabsContainer = document.getElementById('agribusiness-tabs');
+        const agribusinessContentContainer = document.getElementById('agribusiness-content');
+        
+        if (agribusinessTabsContainer && agribusinessContentContainer) {
+            const agribusinessDataKeys = Object.keys(agribusinessTabsData);
+
+            // 1. Populate the tab buttons
+            agribusinessTabsContainer.innerHTML = agribusinessDataKeys.map((key, index) => `
+                <button 
+                    class="agribusiness-tab-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${index === 0 ? 'bg-aadif-green text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'}"
+                    data-key="${key}"
+                >
+                    <i data-lucide="${agribusinessTabsData[key].icon}" class="w-4 h-4"></i>
+                    <span>${key}</span>
+                </button>
+            `).join('');
+
+            // 2. Function to update content based on the active tab
+            const updateAgribusinessContent = (key) => {
+                const data = agribusinessTabsData[key];
+                
+                // Add a class to fade out the old content
+                agribusinessContentContainer.classList.add('opacity-0');
+
+                // Wait for the fade-out transition to finish before updating content
+                setTimeout(() => {
+                    agribusinessContentContainer.innerHTML = `
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-4 md:p-6" data-aos="fade-in" data-aos-duration="600">
+                            <div class="order-2 md:order-1">
+                                <h3 class="text-3xl font-bold text-aadif-green">${key}</h3>
+                                <p class="mt-4 text-gray-600 dark:text-gray-300">
+                                    Our focus on ${key.toLowerCase()} is central to our mission. We implement modern techniques and sustainable practices to boost productivity, create jobs, and ensure food security for the Adansi Akrofuom district.
+                                </p>
+                                <ul class="mt-6 space-y-3">
+                                    <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i><span>Sustainable & Eco-friendly Practices</span></li>
+                                    <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i><span>Community Training Programs</span></li>
+                                    <li class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i><span>Market Linkage for Local Farmers</span></li>
+                                </ul>
+                            </div>
+                            <div class="order-1 md:order-2">
+                                <img src="${data.image}" alt="${key}" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-80">
+                            </div>
+                        </div>
+                    `;
+                    // We need to re-initialize Lucide icons for the new content
+                    lucide.createIcons();
+                    // Add a class to fade in the new content
+                    agribusinessContentContainer.classList.remove('opacity-0');
+                }, 200); 
+            };
+            
+            // Add a CSS transition class to the content container for smooth fades
+            agribusinessContentContainer.classList.add('transition-opacity', 'duration-200');
+
+            // 3. Set the initial content to the first tab
+            updateAgribusinessContent(agribusinessDataKeys[0]);
+
+            // 4. Add a single event listener to the container for all tab clicks
+            agribusinessTabsContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.agribusiness-tab-btn');
+                if (!button) return; // Exit if the click was not on a button
+
+                // Update button styles
+                agribusinessTabsContainer.querySelectorAll('.agribusiness-tab-btn').forEach(btn => {
+                    btn.classList.remove('bg-aadif-green', 'text-white', 'shadow-md');
+                    btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300', 'dark:bg-gray-700', 'dark:text-gray-200', 'dark:hover:bg-gray-600');
+                });
+                button.classList.add('bg-aadif-green', 'text-white', 'shadow-md');
+                button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300', 'dark:bg-gray-700', 'dark:text-gray-200', 'dark:hover:bg-gray-600');
+
+                // Update the content based on the clicked button's data-key
+                const key = button.dataset.key;
+                updateAgribusinessContent(key);
+            });
+        }
+            // --- INITIALIZE LIBRARIES & STATIC CONTENT ---
+            AOS.init({ once: true, duration: 800, offset: 100 });
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // --- EVENT LISTENERS & FUNCTIONALITY ---
+
+            // Header shrink on scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => header.classList.toggle('header-scrolled', window.scrollY > 50));
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+            mobileMenu.innerHTML = Array.from(navLinks).map(link => `<a href="${link.getAttribute('href')}" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">${link.textContent}</a>`).join('');
+            
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.addEventListener('click', (e) => { if (e.target.tagName === 'A') mobileMenu.classList.add('hidden'); });
+
+            // Dark Mode
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const applyTheme = (theme) => {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+                sunIcon.classList.toggle('hidden', theme === 'dark');
+                moonIcon.classList.toggle('hidden', theme !== 'dark');
+            };
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(savedTheme);
+            darkModeToggle.addEventListener('click', () => {
+                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            // Hero Carousel
+            const carouselContainer = document.getElementById('hero-carousel');
+            heroImages.forEach((src, index) => {
+                const slide = document.createElement('div');
+                slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+                slide.style.backgroundImage = `url(${src})`;
+                carouselContainer.appendChild(slide);
+            });
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentImageIndex = 0;
+            setInterval(() => {
+                slides[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % slides.length;
+                slides[currentImageIndex].classList.add('active');
+            }, 7000);
+            
+            // Counting Animation
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.getAttribute('data-target');
+                        const suffix = el.getAttribute('data-suffix') || '';
+                        const duration = 2000;
+                        let start = 0;
+                        const step = (timestamp) => {
+                            if (!start) start = timestamp;
+                            const progress = Math.min((timestamp - start) / duration, 1);
+                            el.innerText = Math.floor(progress * target).toLocaleString() + suffix;
+                            if (progress < 1) window.requestAnimationFrame(step);
+                        };
+                        window.requestAnimationFrame(step);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(counter => observer.observe(counter));
+
+            // Donation Details Toggle
+            document.querySelectorAll('.details-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetDiv = document.getElementById(button.dataset.target);
+                    const isHidden = targetDiv.classList.contains('hidden');
+                    targetDiv.classList.toggle('hidden');
+                    button.textContent = isHidden ? 'Hide Details' : 'Show Details';
+                });
+            });
+
+            // Copy to Clipboard
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const textToCopy = button.previousElementSibling.querySelector('.copy-target').innerText;
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        const originalText = button.innerHTML;
+                        button.innerHTML = 'Copied!';
+                        setTimeout(() => { button.innerHTML = originalText; }, 2000);
+                    });
+                });
+            });
+
+            // Volunteer Form Submission
+            const volunteerForm = document.getElementById('volunteer-form');
+            volunteerForm.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                const formStatus = document.getElementById('form-status');
+                formStatus.textContent = 'Sending...';
+                try {
+                    const response = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
+                    if (response.ok) {
+                        formStatus.textContent = "Thanks! Your request has been received.";
+                        formStatus.style.color = 'green';
+                        volunteerForm.reset();
+                    } else { throw new Error('Network response was not ok.'); }
+                } catch (error) {
+                    formStatus.textContent = "Oops! There was a problem submitting your form.";
+                    formStatus.style.color = 'red';
+                }
+            });
+
+            // Refresh Lucide Icons after dynamic content injection
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
