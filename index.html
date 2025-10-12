@@ -69,6 +69,13 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
         
+        /* Modal styles */
+        .modal { transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+        .modal.hidden { visibility: hidden; opacity: 0; }
+        .modal-content { transition: transform 0.3s ease-in-out; }
+        .modal.hidden .modal-content { transform: scale(0.95); }
+
+
         /* Dark Mode styles */
         .dark body { background-color: #0d1117; color: #c9d1d9; }
         .dark .bg-white { background-color: #161b22; }
@@ -224,7 +231,7 @@
                         <div data-aos="fade-up">
                             <h4 class="text-2xl font-bold text-center text-aadif-green mb-8">Community Impact & Timeline</h4>
                              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mb-8" id="transport-impact-container">
-                                </div>
+                                 </div>
                             <div class="relative mt-4">
                                 <div id="transport-timeline-container" class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center"></div>
                             </div>
@@ -315,8 +322,8 @@
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Meet our dedicated team and find out where we operate.</p>
                 </div>
                 
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up">
                         <img src="richard.jpg" alt="Robert Micah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
                         <h3 class="mt-6 text-2xl font-bold text-aadif-green">Robert Micah</h3>
                         <p class="mt-1 text-lg font-medium text-gray-600">President & CEO</p>
@@ -325,14 +332,51 @@
                             <p><a href="mailto:ramicah007@gmail.com" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>ramicah007@gmail.com</a></p>
                         </div>
                     </div>
-                     <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
                         <img src="gifty.jpg" alt="Gifty Micah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
                         <h3 class="mt-6 text-2xl font-bold text-aadif-green">Gifty Micah</h3>
                         <p class="mt-1 text-lg font-medium text-gray-600">Vice President</p>
                          <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
                             <p><a href="tel:+233244243615" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 244 243 615</a></p>
-                            <p><a href="mailto:gifmic@yahoo.com" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>gifmic@yahoo.com</a></p>
+                            <p><a href="mailto:ppkess007@gmail.com" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>ppkess007@gmail.com</a></p>
                         </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <img src="sebastian.jpg" alt="Sebastian Egeh" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
+                        <h3 class="mt-6 text-2xl font-bold text-aadif-green">Sebastian Egeh</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-600">Director, IT Management</p>
+                        <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                            <p><a href="tel:+233509470647" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 509 470 647</a></p>
+                            <p><a href="mailto:egehsebastian66@gmail.com" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>egehsebastian66@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <img src="odame.jpg" alt="Dr. Charles Odame-Ankrah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
+                            <h3 class="mt-6 text-2xl font-bold text-aadif-green">Dr. Charles Odame-Ankrah</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-600">Environmental Specialist</p>
+                            <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                                <p><a href="tel:+14036696140" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+1 (403) 669-6140</a></p>
+                                <p class="inline-flex items-center gap-2 text-gray-400"><i data-lucide="mail" class="w-4 h-4"></i>Email not available</p>
+                            </div>
+                        </div>
+                        <button class="open-modal-btn mt-6 bg-aadif-green/10 text-aadif-green dark:bg-gray-700 dark:text-gray-200 text-sm font-semibold py-2 px-4 rounded-full hover:bg-aadif-green/20 transition-colors w-full" data-modal-target="odame-modal">More Info</button>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+                        <div>
+                            <img src="donkor.jpg" alt="Ofosuhemaa Donkor" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
+                            <h3 class="mt-6 text-2xl font-bold text-aadif-green">Ofosuhemaa Donkor</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-600">Marketing Director</p>
+                            <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                                <p><a href="tel:+233506843843" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 506 843 843</a></p>
+                                <p class="inline-flex items-center gap-2 text-gray-400"><i data-lucide="mail" class="w-4 h-4"></i>Email not available</p>
+                            </div>
+                        </div>
+                        <button class="open-modal-btn mt-6 bg-aadif-green/10 text-aadif-green dark:bg-gray-700 dark:text-gray-200 text-sm font-semibold py-2 px-4 rounded-full hover:bg-aadif-green/20 transition-colors w-full" data-modal-target="donkor-modal">More Info</button>
                     </div>
                 </div>
 
@@ -370,6 +414,35 @@
         </section>
     </main>
 
+    <div id="odame-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full p-8 m-4 text-left overflow-y-auto max-h-[90vh]">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-aadif-green mb-4">Dr. Charles Odame-Ankrah</h3>
+            <p class="text-gray-600 dark:text-gray-300 space-y-4">
+                Dr. Charles Odame-Ankrah is a visionary scientist, award-winning inventor, and transformative community leader. He is the Principal Scientist at Direct Optics Inc., where he develops groundbreaking air quality measurement technologies. His inventions include the commercialized Photolytic Converter and Self-Aligned High-Finesse Optical Cavity.
+                <br><br>
+                A recipient of numerous honors, including the Queen Elizabeth II Golden Jubilee Medal, Dr. Odame-Ankrah co-founded the Calgary African Community Collective (CACC) and led the historic setup of the Ghana House in Calgary. His work bridges scientific innovation with profound social impact, empowering African and Black communities.
+            </p>
+        </div>
+    </div>
+
+    <div id="donkor-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full p-8 m-4 text-left overflow-y-auto max-h-[90vh]">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-aadif-green mb-4">Ofosuhemaa Donkor</h3>
+            <p class="text-gray-600 dark:text-gray-300 space-y-4">
+                Ofosuhemaa Donkor is a seasoned CEO, investor, and serial entrepreneur with a passion for creating economic growth and jobs across Africa. As the Co-founder and CEO of a successful group of companies, she has created over 750 jobs by focusing on strong organizational governance and a culture of performance.
+                <br><br>
+                Ofosuhemaa excels in overall business operations, from product development and marketing to logistics. Her expertise spans Logistics & Facility Management, biometrics technology, transportation, and Project Management, driving her mission to turn African challenges into opportunities.
+            </p>
+        </div>
+    </div>
+
+
     <div class="bg-gray-100 dark:bg-gray-800 py-4 text-center">
         <p class="text-sm text-gray-700 dark:text-gray-300 font-semibold tracking-wide">
             Upcoming Projects: <span class="text-aadif-green">Affordable Housing · Hotel & Casino · Transport Buses</span> — Building the Future Together.
@@ -392,11 +465,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             // --- DATA FOR DYNAMIC CONTENT ---
             const heroImages = [
-                'https://images.unsplash.com/photo-1594708767771-a75022e7ff35?q=80&w=2070', // Community farming
+                'new.jpeg', // People planting a tree
                 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070', // Charity hands
-                'https://images.unsplash.com/photo-1542810634-71277d952098?q=80&w=2070', // Children in school
+                'children.jpeg', // Children in school
                 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070', // Team working
-                'https://images.unsplash.com/photo-1618495034027-0b44585c9557?q=80&w=2070' // Medical aid
+                'medic.jpeg' // Medical aid
             ];
 
             const coreObjectivesData = [
@@ -699,6 +772,42 @@
                     formStatus.textContent = "Oops! There was a problem submitting your form.";
                     formStatus.style.color = 'red';
                 }
+            });
+
+            // --- Modal Logic ---
+            const openModalButtons = document.querySelectorAll('.open-modal-btn');
+            const closeModalButtons = document.querySelectorAll('.close-modal-btn');
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-modal-target');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                    }
+                });
+            });
+
+            const closeModal = (modal) => {
+                if (modal) {
+                    modal.classList.add('hidden');
+                }
+            };
+
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = button.closest('.modal');
+                    closeModal(modal);
+                });
+            });
+
+            // Close modal when clicking on the overlay
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        closeModal(modal);
+                    }
+                });
             });
 
             // Refresh Lucide Icons after dynamic content injection
