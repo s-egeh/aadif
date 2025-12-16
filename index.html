@@ -323,14 +323,17 @@
                 </div>
                 
                 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up">
-                        <img src="richard.jpg" alt="Robert Micah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
-                        <h3 class="mt-6 text-2xl font-bold text-aadif-green">Robert Micah</h3>
-                        <p class="mt-1 text-lg font-medium text-gray-600">President & CEO</p>
-                        <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
-                            <p><a href="tel:+233596257623" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 596 257 623</a></p>
-                            <p><a href="mailto:rmicah@aadi-gh.org" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>rmicah@aadi-gh.org</a></p>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between" data-aos="fade-up">
+                        <div>
+                            <img src="richard.jpg" alt="Robert Micah" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-aadif-gold">
+                            <h3 class="mt-6 text-2xl font-bold text-aadif-green">Robert Micah</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-600">President & CEO</p>
+                            <div class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                                <p><a href="tel:+233596257623" class="hover:text-aadif-green transition inline-flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>+233 596 257 623</a></p>
+                                <p><a href="mailto:rmicah@aadi-gh.org" class="hover:text-aadif-green transition inline-flex items-center gap-2 break-all"><i data-lucide="mail" class="w-4 h-4"></i>rmicah@aadi-gh.org</a></p>
+                            </div>
                         </div>
+                        <button class="open-modal-btn mt-6 bg-aadif-green/10 text-aadif-green dark:bg-gray-700 dark:text-gray-200 text-sm font-semibold py-2 px-4 rounded-full hover:bg-aadif-green/20 transition-colors w-full" data-modal-target="micah-modal">More Info</button>
                     </div>
 
                     <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col" data-aos="fade-up" data-aos-delay="100">
@@ -443,6 +446,22 @@
         </div>
     </div>
 
+    <div id="micah-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full p-8 m-4 text-left overflow-y-auto max-h-[90vh]">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-aadif-green mb-4">Robert Micah</h3>
+            <p class="text-gray-600 dark:text-gray-300 space-y-4">
+                Bobby J, as he is popularly known, is a prodigiously hardworking man with exceptional business acumen.
+                <br><br>
+                He has been a freelance journalist, a teacher, a radio and television host and an advocate for fairness and community justice. He has won several local and international awards including the prestigious Queen Elizabeth II Golden Jubilee Medal for community awards.
+                <br><br>
+                Previous positions he has held includes but not limited to Chairman of the Board, International School of Excellence (Canada), president, Ghanaian Canadian Association of Calgary, Ghanaian Times National Community Award, Executive Director of The Taradale Group of Mgmt Constituency Inc and the President and CEO of the Robert Micah Holdings Ltd to mention a few.
+            </p>
+        </div>
+    </div>
+
 
     <div class="bg-gray-100 dark:bg-gray-800 py-4 text-center">
         <p class="text-sm text-gray-700 dark:text-gray-300 font-semibold tracking-wide">
@@ -450,12 +469,51 @@
         </p>
     </div>
 
-    <footer class="bg-aadif-green text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>© <span id="current-year"></span> Adansi Akrofuom Development Initiative Foundation. All Rights Reserved.</p>
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-aadif-green text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl font-bold" data-aos="fade-up">Stay Connected & Updated</h2>
+            <p class="mt-4 text-lg text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Subscribe to our newsletter to receive the latest news, project updates, and impact stories from AADIF directly to your inbox.</p>
+            <form class="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-aadif-gold shadow-md" required>
+                <button type="submit" class="bg-aadif-gold text-aadif-green font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition shadow-lg transform hover:scale-105">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <img src="adansi.jpg" alt="AADIF Logo" class="h-10 w-10 rounded-full object-cover border-2 border-aadif-gold">
+                        <h3 class="text-2xl font-bold text-aadif-green font-serif">AADIF</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-xs mx-auto md:mx-0">Dedicated to transformative development in Adansi Akrofuom through sustainable projects and community empowerment.</p>
+                </div>
+                <div class="flex space-x-6 mb-8 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-aadif-gold transition transform hover:scale-110"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-aadif-gold transition transform hover:scale-110"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-aadif-gold transition transform hover:scale-110"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-aadif-gold transition transform hover:scale-110"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-aadif-gold transition transform hover:scale-110"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© <span id="current-year"></span> Adansi Akrofuom Development Initiative Foundation. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
     
+    <button id="back-to-top" class="fixed bottom-24 right-5 bg-gray-800 text-white p-3 rounded-full shadow-lg z-40 opacity-0 invisible transition-all duration-300 hover:bg-aadif-green hover:-translate-y-1" title="Back to Top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
     <a href="https://wa.me/233596257623?text=Hello%20AADIF,%20I'm%20interested%20in%20learning%20more%20about%20your%20initiatives." target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg whatsapp-pulse z-40" title="Chat with us on WhatsApp">
         <i data-lucide="message-circle"></i>
     </a>
@@ -466,11 +524,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             // --- DATA FOR DYNAMIC CONTENT ---
             const heroImages = [
-                'new.jpeg', // People planting a tree
+                'https://images.unsplash.com/photo-1625758476104-f2ed6c81248f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // People planting a tree
                 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070', // Charity hands
-                'children.jpeg', // Children in school
-                'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070', // Team working
-                'medic.jpeg' // Medical aid
+                'https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Children in school
+                'https://images.unsplash.com/photo-1635185481431-661b09594e6c?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Team working
+                'https://images.unsplash.com/photo-1566889035559-b14ef9d4c365?q=80&w=723&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Medical aid
             ];
 
             const coreObjectivesData = [
@@ -484,10 +542,10 @@
             ];
 
             const agribusinessTabsData = {
-                'Crop Production': { icon: 'carrot', image: 'crop.jpg' },
-                'Livestock Farming': { icon: 'goat', image: 'livestock.jpg' },
-                'Agro-Processing': { icon: 'factory', image: 'agro.jpg' },
-                'Export & Market': { icon: 'ship', image: 'export.jpg' }
+                'Crop Production': { icon: 'carrot', image: 'https://images.unsplash.com/photo-1760286834274-4f13c9747f7d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+                'Livestock Farming': { icon: 'goat', image: 'https://images.unsplash.com/photo-1657536011755-b6cbe9c4c522?q=80&w=2096&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+                'Agro-Processing': { icon: 'factory', image: 'https://images.unsplash.com/photo-1720250599958-551123ba3234?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+                'Export & Market': { icon: 'ship', image: 'https://images.unsplash.com/photo-1593617761943-9099951a0769?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }
             };
 
             const agribusinessRoadmapData = [
@@ -810,6 +868,25 @@
                     }
                 });
             });
+
+            // Back to Top Button Logic
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopButton.classList.remove('opacity-0', 'invisible');
+                    } else {
+                        backToTopButton.classList.add('opacity-0', 'invisible');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
 
             // Refresh Lucide Icons after dynamic content injection
             lucide.createIcons();
